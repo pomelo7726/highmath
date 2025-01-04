@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高分資優數學家教中心</title>
+    <style>
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            color: #333;
+        }
+        .container {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+        .button {
+            padding: 12px 24px;
+            background: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background: #0056b3;
+        }
+        .course-section, .contact-section {
+            margin-top: 30px;
+        }
+        .course {
+            padding: 10px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            background: #28a745;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>高分資優數學家教中心</h1>
+        <p>提供專業的數學輔導，助您取得優異成績！</p>
+        <a href="#contact" class="button">聯絡我們</a>
+
+        <div class="course-section">
+            <h2>課程介紹</h2>
+            <div class="course">✔ 國中數學強化班</div>
+            <div class="course">✔ 數學競賽培訓班</div>
+            <div class="course">✔ 一對一數學家教</div>
+        </div>
+
+        <div class="contact-section" id="contact">
+            <h2>聯絡我們</h2>
+            <form action="https://formspree.io/f/你的專屬ID" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="您的姓名" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="您的電子郵件" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="您的訊息" required></textarea>
+                </div>
+                <button type="submit">送出</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
