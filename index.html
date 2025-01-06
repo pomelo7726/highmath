@@ -7,11 +7,18 @@
   <meta name="description" content="高分資優數學家教中心，專業國中數學教學，提供優質數學輔導課程。">
   <meta name="keywords" content="數學家教, 國中數學, 台灣數學補習, 資優生教育, 高分資優">
   <meta name="author" content="高分資優數學家教中心">
+
   <!-- Open Graph / Facebook -->
   <meta property="og:title" content="高分資優數學家教中心" />
   <meta property="og:description" content="專業國中數學輔導，提供優質數學課程、競賽訓練與一對一家教。" />
   <meta property="og:image" content="https://example.com/1.jpg" />
   <meta property="og:url" content="https://example.com" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="高分資優數學家教中心">
+  <meta name="twitter:description" content="專業國中數學輔導，提供優質數學課程、競賽訓練與一對一家教。">
+  <meta name="twitter:image" content="https://example.com/1.jpg">
 
   <link
     rel="stylesheet"
@@ -26,7 +33,8 @@
 
     body {
       font-family: 'Roboto', Arial, sans-serif;
-      background: url('1.jpg') center/cover no-repeat;
+      /* 加上備用背景色，假如背景圖載入失敗 */
+      background: #f0f0f0 url('1.jpg') center/cover no-repeat;
       color: #333;
       margin: 0;
     }
@@ -42,14 +50,29 @@
       z-index: 100;
     }
 
-    nav {
+    /* 將 .navbar-container 包含 logo 和 .nav-links */
+    .navbar-container {
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      padding: 10px 0;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 20px;
     }
 
-    nav a {
+    .nav-logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-links a {
       margin: 0 20px;
       text-decoration: none;
       color: #007BFF;
@@ -57,8 +80,42 @@
       transition: color 0.3s ease;
     }
 
-    nav a:hover {
+    .nav-links a:hover {
       color: #0056b3;
+    }
+
+    /* 手機漢堡按鈕 */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      width: 30px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      height: 3px;
+      background: #007BFF;
+      margin: 5px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* 漢堡選單展開後的樣式 */
+    .nav-active {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .nav-active a {
+      margin: 10px 20px;
+      white-space: nowrap;
     }
 
     /* ===== Main Content ===== */
@@ -91,6 +148,7 @@
       font-size: 2rem;
       color: #333;
       margin-top: 30px;
+      margin-bottom: 20px;
     }
 
     p {
@@ -103,7 +161,8 @@
     .about-section,
     .course-section,
     .contact-section,
-    .achievement-section {
+    .achievement-section,
+    .faq-section {
       margin-top: 40px;
       text-align: left;
     }
@@ -114,6 +173,24 @@
       border-radius: 10px;
       margin-bottom: 10px;
       background-color: #fff;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-section details {
+      margin-bottom: 10px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      cursor: pointer;
+    }
+    .faq-section summary {
+      font-weight: bold;
+      font-size: 1.1rem;
+      outline: none;
+    }
+    .faq-section p {
+      margin-top: 10px;
     }
 
     /* ===== Buttons ===== */
@@ -180,6 +257,16 @@
       h1 {
         font-size: 2rem;
       }
+      .navbar-container {
+        padding: 10px;
+      }
+      /* 隱藏原本的 .nav-links，改用漢堡菜單 */
+      .nav-links {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
       nav a {
         margin: 0 10px;
       }
@@ -200,12 +287,27 @@
 <body>
   <!-- ===== Header & Navbar ===== -->
   <header>
-    <nav>
-      <a href="#home">首頁</a>
-      <a href="#courses">課程介紹</a>
-      <a href="#achievement">學生成就</a>
-      <a href="#contact">聯絡我們</a>
-    </nav>
+    <div class="navbar-container">
+      <!-- 可加上 logo 或文字 -->
+      <a href="#home" class="nav-logo">高分資優</a>
+
+      <!-- 漢堡按鈕 -->
+      <div class="hamburger" id="hamburgerMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav>
+        <div class="nav-links" id="navLinks">
+          <a href="#home">首頁</a>
+          <a href="#courses">課程介紹</a>
+          <a href="#achievement">學生成就</a>
+          <a href="#faq">常見問題</a>
+          <a href="#contact">聯絡我們</a>
+        </div>
+      </nav>
+    </div>
   </header>
 
   <!-- ===== Main Content ===== -->
@@ -257,6 +359,23 @@
         <p>2019年全國數學能力測驗優異表現 - 林美麗</p>
       </section>
 
+      <!-- FAQ Section -->
+      <section class="faq-section" id="faq">
+        <h2>常見問題</h2>
+        <details>
+          <summary>Q1: 課程適合什麼程度的學生？</summary>
+          <p>本中心針對國中任何程度的學生皆有對應的課程，可依學生程度安排合適的班級或一對一教學。</p>
+        </details>
+        <details>
+          <summary>Q2: 上課地點與時間如何安排？</summary>
+          <p>可彈性安排上課時間，地點可於本中心教室或視情況提供到府教學服務。</p>
+        </details>
+        <details>
+          <summary>Q3: 若對課程內容不滿意，可以退費嗎？</summary>
+          <p>若對首次試聽或前幾堂課不滿意，可依本中心退費規定申請部分或全部退費，請聯繫客服了解詳情。</p>
+        </details>
+      </section>
+
       <!-- Contact Section -->
       <section class="contact-section" id="contact">
         <h2>聯絡我們</h2>
@@ -302,6 +421,14 @@
         top: 0,
         behavior: 'smooth'
       });
+    });
+
+    // 手機漢堡選單切換
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburgerMenu.addEventListener('click', () => {
+      navLinks.classList.toggle('nav-active');
     });
   </script>
 </body>
