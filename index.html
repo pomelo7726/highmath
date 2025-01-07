@@ -19,7 +19,7 @@
   <meta name="twitter:title" content="高分資優數學家教中心">
   <meta name="twitter:description" content="專業國中數學輔導，提供優質數學課程、競賽訓練與一對一家教。">
   <meta name="twitter:image" content="https://example.com/1.jpg">
-  
+
   <!-- 載入字體 -->
   <link
     rel="stylesheet"
@@ -165,10 +165,13 @@
       text-align: left;
     }
 
+    /* 區塊的 margin-top */
     .about-section,
     .course-section,
-    .contact-section,
-    .achievement-section {
+    .achievement-section,
+    .teachers-section,
+    .faq-section,
+    .contact-section {
       margin-top: 40px;
       text-align: left;
     }
@@ -179,6 +182,41 @@
       border-radius: 10px;
       margin-bottom: 10px;
       background-color: #fff;
+    }
+
+    /* ===== 師資介紹區塊 ===== */
+    .teacher-card {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fff;
+      padding: 15px;
+      margin-bottom: 10px;
+    }
+    .teacher-card h3 {
+      margin-bottom: 8px;
+      color: #007bff;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-section details {
+      margin-bottom: 10px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      cursor: pointer;
+    }
+
+    .faq-section summary {
+      font-weight: bold;
+      font-size: 1.1rem;
+      outline: none;
+    }
+
+    .faq-section p {
+      margin-top: 10px;
     }
 
     /* ===== Buttons ===== */
@@ -293,6 +331,8 @@
           <a href="#home" aria-label="前往首頁">首頁</a>
           <a href="#courses" aria-label="前往課程介紹">課程介紹</a>
           <a href="#achievement" aria-label="前往學生成就">學生成就</a>
+          <a href="#teachers" aria-label="前往師資介紹">師資介紹</a>
+          <a href="#faq" aria-label="前往常見問題">常見問題</a>
           <a href="#contact" aria-label="前往聯絡我們">聯絡我們</a>
         </div>
       </nav>
@@ -311,7 +351,8 @@
       <section class="about-section" id="home">
         <h2>關於我們</h2>
         <p>
-          我們致力於提供專業且具體的數學教育，專為國中資優生設計的課程，透過系統性的教學內容，幫助學生掌握數學概念並提升解題能力。我們強調互動式學習，並針對不同程度的學生量身打造專屬的學習計劃，讓每位學生都能在數學學習中找到自信與成就感。
+          我們致力於提供專業且具體的數學教育，專為國中資優生設計的課程。透過系統化的教學內容，幫助學生掌握數學概念並提升解題能力。  
+          我們強調互動式學習，並針對不同程度的學生量身打造專屬的學習計劃，讓每位學生都能在數學學習中找到自信與成就感。
         </p>
       </section>
 
@@ -327,7 +368,7 @@
         <div class="course-card">
           <h3>數學競賽培訓班</h3>
           <p>
-            針對希望參加數學競賽的學生，進行密集訓練。
+            針對希望參加數學競賽的學生，進行密集訓練並提供模擬測驗。
           </p>
         </div>
         <div class="course-card">
@@ -346,6 +387,40 @@
         <p>2021年全國數學檢定高級通過 - 陳大文</p>
         <p>2020年全國數學公開賽季軍 - 張小龍</p>
         <p>2019年全國數學能力測驗優異表現 - 林美麗</p>
+      </section>
+
+      <!-- Teachers Section (師資介紹) -->
+      <section class="teachers-section" id="teachers">
+        <h2>師資介紹</h2>
+        <div class="teacher-card">
+          <h3>張老師</h3>
+          <p>國立台灣大學數學系碩士畢業，擁有十年家教與補習班教學經驗，擅長引導學生培養邏輯思考。</p>
+        </div>
+        <div class="teacher-card">
+          <h3>李老師</h3>
+          <p>國立交通大學應用數學系畢業，熟悉競賽教學與奧林匹亞數學訓練，對提升學生解題策略具有豐富經驗。</p>
+        </div>
+        <div class="teacher-card">
+          <h3>王老師</h3>
+          <p>前全國數學競賽金牌選手，擁有深厚的實戰經驗，致力於激發學生對數學的熱愛與挑戰精神。</p>
+        </div>
+      </section>
+
+      <!-- FAQ Section (常見問題) -->
+      <section class="faq-section" id="faq">
+        <h2>常見問題</h2>
+        <details>
+          <summary>Q1: 課程適合什麼程度的學生？</summary>
+          <p>本中心針對國中任何程度的學生皆有對應的課程，可依學生程度安排合適的班級或一對一教學。</p>
+        </details>
+        <details>
+          <summary>Q2: 上課地點與時間如何安排？</summary>
+          <p>可彈性安排上課時間，地點可於本中心教室或視情況提供到府教學服務。</p>
+        </details>
+        <details>
+          <summary>Q3: 若對課程內容不滿意，可以退費嗎？</summary>
+          <p>若對前幾堂課不滿意，可依本中心退費規定申請部分或全部退費，請聯繫客服了解詳情。</p>
+        </details>
       </section>
 
       <!-- Contact Section -->
